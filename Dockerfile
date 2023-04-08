@@ -1,4 +1,4 @@
-FROM python:3-alpine
+FROM python:3.7.2-alpine
 
 MAINTAINER Peter Fisher
 
