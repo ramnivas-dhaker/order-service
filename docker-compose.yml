@@ -4,6 +4,15 @@ volumes:
   order-db-data:
 
 services:
+  order_db:
+    image: mysql:5.7
+    volumes:
+      - order-db-data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=test
+      - MYSQL_DATABASE=order
+    restart: always
+
   order:
     build:
       context: .
@@ -16,12 +25,3 @@ services:
     depends_on:
       - order_db
     restart: on-failure
-
-  order_db:
-    image: mysql:5.7
-    volumes:
-      - order-db-data:/var/lib/mysql
-    environment:
-      - MYSQL_ROOT_PASSWORD=test
-      - MYSQL_DATABASE=order
-    restart: always
