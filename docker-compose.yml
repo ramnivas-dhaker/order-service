@@ -12,6 +12,8 @@ services:
       - MYSQL_ROOT_PASSWORD=test
       - MYSQL_DATABASE=order
     restart: always
+    ports:
+      - 5557:5557
 
   order:
     build:

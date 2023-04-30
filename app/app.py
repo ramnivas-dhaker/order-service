@@ -8,7 +8,8 @@ app = Flask(__name__)
 app.config.update(dict(
     SECRET_KEY="powerful secretkey",
     WTF_CSRF_SECRET_KEY="a csrf secret key",
-    SQLALCHEMY_DATABASE_URI='mysql+mysqlconnector://root:test@order_db/order',
+    # SQLALCHEMY_DATABASE_URI='mysql+mysqlconnector://root:test@order_db/order',
+    SQLALCHEMY_DATABASE_URI='mysql+mysqlconnector://root:test@mysql.default.svc.cluster.local/order',
 ))
 
 models.init_app(app)
